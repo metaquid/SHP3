@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    background-color: #594999;
+}
+
+.transition {
+    -o-transition: color 1s ease-in-out, background-color 1s ease-in-out, transform 0.5s ease-in-out;
+    -moz-transition: color 1s ease-in-out, background-color 1s ease-in-out, transform 0.5s ease-in-out;
+    -webkit-transition: color 1s ease-in-out, background-color 1s ease-in-out, transform 0.5s ease-in-out;
+    transition: color 1s ease-in-out, background-color 1s ease-in-out, transform 0.5s ease-in-out;
+	text-color: rgba(89, 73, 153, 0.8);
+}
+
+        @keyframes liquidColor {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes soundspeed {
+            0% {
+                playbak-rate: 1;
+			}
+            50% {
+				playbak-rate: 0.5;
+			}
+            100% {
+                playbak-rate: 1;
+            }
+        }
+
+.flex {
+	max-width: 40%;
+	margin-top: 2vw;
+	margin-left: 2vw;
+	border-radius: 10px;
+	animation: liquidColor 5s infinite;
+}
+
+.audiobox {
+	margin-top: 2vw;
+	margin-left: 2vw;
+}
+
+  .audiobox audio {
+    opacity: 0.5;
+    width: 40%;
+    height: 4vw;
+	animation: soundspeed 180s infinite;
+  }
+
+blockquote {
+    color: #594999;
+    font-family: "Roboto", sans-serif;
+    font-size: calc(0.8em + 2vw);
+    border-left: none;
+    padding: 0;
+    margin: 1vw;
+}
+
+p {
+	font-family: "Roboto", sans-serif;
+    font-size: calc(0.8em + 1.5vw);
+    margin-bottom: calc(1em + 1vw);
+    opacity: 0.6;
+}
+
+    p::before,
+    p::after {
+        content: " - ";
+    }
+
+.btn {
+    padding: calc(0.2em + 0.5vw);
+    font-family: "Roboto", sans-serif;
+    font-size: calc(0.4em + 1vw);
+    color: white;
+    background-color: #594999;
+    margin: 1vw;
+	border-radius: 10px;
+	text-decoration: none;
+	transition: transform 0.3s ease;
+}
+
+.btn:hover {
+	color: white;
+	opacity: 0.8;
+	transform: scale(1.1);
+	transform-origin: center center;
+}
+
+div#main {
+    background-color: white;
+    margin-top: -46vw;
+	margin-left: 44vw;
+	margin-right: 2vw;
+    padding: calc(1em + 2vw);
+    text-align: center;
+    border-radius: 10px;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+html {
+  font-size: 22.5%;
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  height: 15vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.text__container {
+  overflow: hidden;
+  position: relative;
+  filter: contrast(100%) brightness(1250%);
+}
+.text__container .text {
+  position: relative;
+  background: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: calc(0.8em + 2vw);
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1rem;
+  margin: 0;
+  color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.text__container .text::before, .text__container .text::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: attr(data-text);
+  color: #fff;
+  filter: blur(0.2rem);
+  pointer-events: none;
+}
+.text__container .text::after {
+  mix-blend-mode: difference;
+}
+.text__container .text__gradient, .text__container .text__spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+.text__container .text__gradient {
+  background: linear-gradient(45deg, #007ffe, #001c3d);
+  mix-blend-mode: multiply;
+}
+.text__container .text__spotlight {
+  top: -100%;
+  left: -100%;
+  background: radial-gradient(circle, #fff, transparent 25%) 0 0/25% 25%, radial-gradient(circle, #fff, #000 25%) 50% 50%/12.5% 12.5%;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  transform-style: preserve-3d;
+  mix-blend-mode: color-dodge;
+  -webkit-animation: light--translate 5s infinite linear;
+          animation: light--translate 20s infinite linear;
+}
+
+@-webkit-keyframes light--translate {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(50%, 50%, 0);
+  }
+}
+
+@keyframes light--translate {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(50%, 50%, 0);
+  }
+}
